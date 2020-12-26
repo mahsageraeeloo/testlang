@@ -131,7 +131,9 @@ publishing {
     }
     publications {
         create<MavenPublication>("testlang") {
-            file("code/testlang/build/artifacts/testlang_Plugin/testlang.zip")
+            artifact("code/testlang/build/artifacts/testlang_Plugin/testlang.zip") {
+                extension = "zip"
+            }
         }
     }
 }
