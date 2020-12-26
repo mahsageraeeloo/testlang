@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+    <component name="MPSProject">
+        <projectModules>
+            <modulePath path="$PROJECT_DIR$/buildscripts/ir.amv.snippets.testlang.build.msd" folder="buildscripts"/>
+            <modulePath path="$PROJECT_DIR$/code/testlang/buildsolution/ir.amv.snippets.testlang.lang.build.msd"
+                        folder="langs"/>
+            <modulePath
+                    path="$PROJECT_DIR$/code/testlang/languages/ir.amv.snippets.testlang.lang/ir.amv.snippets.testlang.lang.mpl"
+                    folder="langs"/>
+        </projectModules>
+    </component>
+</project>
