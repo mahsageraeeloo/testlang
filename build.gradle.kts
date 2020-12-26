@@ -130,7 +130,7 @@ publishing {
         }
     }
     publications {
-        register("gpr") {
+        create<MavenPublication>("testlang") {
             file("code/testlang/build/artifacts/testlang_Plugin/testlang.zip")
         }
     }
