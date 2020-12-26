@@ -3,6 +3,7 @@ import org.gradle.api.tasks.Copy
 plugins {
     base
     id("de.undercouch.download") version "4.1.1"
+    id("maven-publish")
 }
 
 group = "ir.amv.snippets"
@@ -115,4 +116,22 @@ val copyJbr = tasks.register("copyJbr") {
 val buildRcpDistribJbr by tasks.registering {
     dependsOn(buildRcpDistrib, copyJbr)
     antexec("build/build-rcpdistrib-jbr.xml")
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/mahsageraeeloo/testlang")
+            credentials {
+                username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
+            }
+        }
+    }
+    publications {
+        register("gpr") {
+            file("code/testlang/build/artifacts/testlang_Plugin/testlang.zip")
+        }
+    }
 }
